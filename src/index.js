@@ -4,9 +4,59 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore } from 'redux';
+import allReducers from './Reducers/Index';
+import { Provider } from 'react-redux';
+
+const store = createStore(
+
+  allReducers,
+
+  );
+ 
+
+
+
+//Store -> Globalized state
+
+//Action  increment 
+
+
+     
+  // }
+  // const decrement = () => {
+  //   return {
+  //     type: 'DECREMENT'
+  //   }
+     
+  // }
+// //Reducer  
+// const counter = (state = 0, action) => {
+//   switch(action.type){
+//     case "INCREMENT" :
+//       return state + 1
+//     case "DECREMENT" :
+//       return state - 1
+//   }
+// };
+
+// let store = createStore(counter);
+
+// //Display it in console
+// store.subscribe(() => console.log(store.getState()));
+// //Dispatch 
+// store.dispatch(increment());
+// store.dispatch(increment());
+// store.dispatch(decrement());
+store.subscribe(() => console.log(store.getState()));
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store = {store}>
+    
     <App />
+
+    </Provider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
